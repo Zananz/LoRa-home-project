@@ -48,19 +48,24 @@ def Datenbank_eintrag(liste):
 while 1:
     
     in_come = ser.readline()
+  
+    in_come = in_come.decode()
+    
+    in_come = in_come.replace("\n","").replace("\r","")
     
     print(in_come)
-    
+    """
     #filtern der ungewollt mitgeliferten daten
     in_come = "%s"%in_come
-    in_come = in_come[4:len(in_come)-6]
-    print(in_come)
+    in_come = in_come[4:len(in_come)-6]"""
     
     in_come = in_come.split("Zananz")
     
     in_come = in_come[1:]#erstes element nie wichtig
+    print(in_come)
     
     Datenbank_eintrag(in_come)
+  
     """
     if in_come[:6] == "Zananz":#"Zananz" fungirt als Netz Audenifizirung
         
